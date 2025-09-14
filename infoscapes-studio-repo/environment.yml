@@ -1,0 +1,31 @@
+name: infoscapes
+channels:
+  - conda-forge
+dependencies:
+  # Core
+  - python=3.11
+  - numpy=2.0.*
+  - pandas=2.2.*
+  - scipy=1.14.*
+  - scikit-learn=1.5.*
+  - matplotlib=3.8.*
+
+  # UI
+  - streamlit>=1.32
+
+  # Embeddings & clustering
+  - umap-learn=0.5.*
+  - numba=0.59.*          # needed by umap-learn on macOS arm64
+  - llvmlite=0.42.*       # must match numba
+  - hdbscan=0.8.*
+
+  # PHATE stack (optional but you wanted it)
+  - phate=1.0.11
+  - graphtools=1.5.3
+  - scprep=1.2.3
+
+  # Nice to have
+  - pip
+  - pip:
+      # keep this section if you later want extras via pip
+      - pynndescent>=0.5  # UMAP’s NN backend (conda may already supply it)
